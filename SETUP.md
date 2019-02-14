@@ -128,6 +128,8 @@ just run it (see instructions in the [USAGE](USAGE.md) document).
    - Python tools - `$ sudo apt-get install python3-setuptools`
 
 2. Clone the latest [Private-Transaction-Families](./) sources from git
+[Private-Transaction-Families](https://github.com/hyperledger-labs/private-transaction-families/)
+
 3. Install private rest api
    - `$ cd private_rest_api/rest_api`
    - `$ ./compile_proto`
