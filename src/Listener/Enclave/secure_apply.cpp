@@ -287,12 +287,12 @@ sgx_status_t secure_apply(
         return status;
     // execute logic
     auto res = business_logic::execute_transaction(decrypted_payload, key, txn_svn, nonce);
-    if (!res.first)
+    if (!res)
     {
         // fill eror mesage
-        std::string err_str = std::string(res.second.c_str()).substr(0, MAX_ERROR_MSG_LEN).c_str();
-        err_str.copy(err_msg, err_str.size());
-        err_msg[err_str.size()] = '\n';
+        //std::string err_str = std::string(res.second.c_str()).substr(0, MAX_ERROR_MSG_LEN).c_str();
+        //err_str.copy(err_msg, err_str.size());
+        //err_msg[err_str.size()] = '\n';
         return SGX_ERROR_UNEXPECTED;
     }
     return SGX_SUCCESS;

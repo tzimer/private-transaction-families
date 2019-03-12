@@ -63,4 +63,27 @@ enum ActionType{
     INVALID
 };
 
+const static std::string add_user = "add_user";
+const static std::string remove_user = "remove_user";
+const static std::string set_balance = "set_balance";
+const static std::string change_balance = "change_balance";
+const static std::string add_bunny = "add_bunny";
+const static std::string change_bunny_state = "change_bunny_state";
+const static std::string add_couple = "add_couple";
+const static std::string remove_couple = "remove_couple";
+const static std::string invalid_acction = "invalid_acction";
+
+
+enum Actions{
+    ADD_USER,
+    REMOVE_USER,
+    SET_BALANCE,
+    CHANGE_BALANCE,
+    ADD_BUNNY,
+    CHANGE_BUNNY_STATE,
+    ADD_COUPLE,
+    REMOVE_COUPLE,
+    INVALID_ACCTION
+};
+
 } // namespace config

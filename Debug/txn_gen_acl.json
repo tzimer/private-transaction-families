@@ -8,10 +8,10 @@
       "Type": "private_ledger_administration",
       "Action": "add_member",
       "Key": [
-	      "0375921E1176D3BA51B09482C4F322A7AAAD89A3910C4B0F3B640380AEC84A8FCB"
+	"0375921E1176D3BA51B09482C4F322A7AAAD89A3910C4B0F3B640380AEC84A8FCB"
       ],
       "Address": [
-        "bb563a905f1957a0dd5fbf218d5d402d303ece"
+        "MI8KyOz5edSecG5OkEXfkopGRy83"
      ]
     }
   ]

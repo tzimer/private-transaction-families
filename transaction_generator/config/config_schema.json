@@ -38,6 +38,18 @@
           },
           {
             "$ref": "#definitions/acl_payload"
+          },
+          {
+            "$ref": "#definitions/funny_bunny_user_handle"
+          },
+          {
+            "$ref": "#definitions/funny_bunny_balance_handle"
+          },
+          {
+            "$ref": "#definitions/funny_bunny_bunny_repository"
+          },
+          {
+            "$ref": "#definitions/funny_bunny_couples"
           }
         ]
       },
@@ -60,7 +72,8 @@
           "enum": [
             "set",
             "inc",
-            "dec"
+            "dec",
+            "setUser"
           ]
         },
         "Value": {
@@ -72,13 +85,230 @@
         "Name": {
           "description": "key name",
           "type": "string"
+        },
+        "Timestamp": {
+          "description": "TBD",
+          "type": "string"
+        },
+        "UID": {
+          "description": "TBD",
+          "type": "string"
         }
       },
       "required": [
         "Verb",
         "Name",
-        "Value"
+        "Timestamp",
+        "UID"
       ]
+    },
+    "funny_bunny_user_handle": {
+      "type": "object",
+      "properties": {
+        "Action": {
+          "description": "action to be taken",
+          "type": "string",
+          "enum": [
+            "add_user",
+            "remove_user"
+          ]
+        },
+        "Timestamp": {
+          "description": "public key for member, group id for group",
+          "type": "string",
+          "uniqueItems": true
+        },
+        "UID": {
+          "description": "(optional) array of address prefix (not including first 6 characters of family name) to assign to members or groups, prefix of 62 zeroes is allready reserved",
+          "type": "string",
+          "uniqueItems": true
+        },
+        "Name": {
+          "description": "(optional) group that this member should belong to, group name must be added first with add_group txn",
+          "type": "string"
+        },
+        "Email": {
+          "description": "(optional) group that this member should belong to, group name must be added first with add_group txn",
+          "type": "string"
+        },
+        "PhotoURL": {
+          "description": "(optional) group that this member should belong to, group name must be added first with add_group txn",
+          "type": "string"
+        }
+
+      },
+      "required": [
+        "Action",
+        "Timestamp",
+        "UID",
+        "Name"
+      ]
+    },
+    "funny_bunny_balance_handle": {
+      "type": "object",
+      "properties": {
+        "Action": {
+          "description": "action to be taken",
+          "type": "string",
+          "enum": [
+            "set_balance",
+            "change_balance"
+          ]
+        },
+        "Money": {
+          "description": "public key for member, group id for group",
+          "type": "integer",
+          "uniqueItems": true
+        },
+        "Carrots": {
+          "description": "(optional) array of address prefix (not including first 6 characters of family name) to assign to members or groups, prefix of 62 zeroes is allready reserved",
+          "type": "integer",
+          "uniqueItems": true
+        },
+        "UID": {
+          "description": "(optional) group that this member should belong to, group name must be added first with add_group txn",
+          "type": "string"
+        }
+
+
+      },
+
+      "anyOf": [
+        {
+            
+            "required": [
+                "Action",
+                "UID",
+                "Carrots",
+                "Money"
+            ]
+            
+        },
+        {
+            "required": [
+              "Action",
+              "UID",
+              "Carrots"
+            ]
+        },
+        {
+          "required": [
+            "Action",
+            "UID",
+            "Money"
+          ]
+      }
+
+    ]
+      
+    },
+
+    "funny_bunny_bunny_repository": {
+      "type": "object",
+      "properties": {
+        "Action": {
+          "description": "action to be taken",
+          "type": "string",
+          "enum": [
+            "add_bunny", 
+            "change_bunny_state"
+          ]
+        },
+        "Bunny": {
+          "description": "public key for member, group id for group",
+          "type": "string",
+          "uniqueItems": true
+        },
+        "Generation": {
+          "description": "(optional) array of address prefix (not including first 6 characters of family name) to assign to members or groups, prefix of 62 zeroes is allready reserved",
+          "type": "integer",
+          "uniqueItems": true
+        },
+        "UID": {
+          "description": "(optional) group that this member should belong to, group name must be added first with add_group txn",
+          "type": "string"
+        }, 
+        "IsNew": {
+          "description": "(optional) group that this member should belong to, group name must be added first with add_group txn",
+          "type": "boolean"
+        }, 
+        "State": {
+          "description": "(optional) group that this member should belong to, group name must be added first with add_group txn",
+          "type": "string"
+        }
+
+
+      },
+
+      "anyOf": [
+        {
+            
+          "required": [
+            "Action",
+            "UID",
+            "Bunny",
+            "Generation",
+            "IsNew",
+            "State"
+        ]
+            
+        },
+        {
+          "required": [
+            "Action",
+            "UID",
+            "Bunny",
+            "State"
+        ]
+        }
+
+    ]
+             
+    },
+
+    "funny_bunny_couples": {
+      "type": "object",
+      "properties": {
+        "Action": {
+          "description": "action to be taken",
+          "type": "string",
+          "enum": [
+            "add_couple", 
+            "remove_couple"
+          ]
+        },
+        "Bunny": {
+          "description": "public key for member, group id for group",
+          "type": "string",
+          "uniqueItems": true
+        },
+        "SonGeneration": {
+          "description": "(optional) array of address prefix (not including first 6 characters of family name) to assign to members or groups, prefix of 62 zeroes is allready reserved",
+          "type": "integer"
+        },
+        "UID": {
+          "description": "(optional) group that this member should belong to, group name must be added first with add_group txn",
+          "type": "string"
+        }, 
+        "InLoveWith": {
+          "description": "(optional) group that this member should belong to, group name must be added first with add_group txn",
+          "type": "string"
+        }, 
+        "LoveTime": {
+          "description": "(optional) group that this member should belong to, group name must be added first with add_group txn",
+          "type": "integer"
+        },
+        "TimeStr": {
+          "description": "(optional) group that this member should belong to, group name must be added first with add_group txn",
+          "type": "string"
+        },
+        "Timestamp": {
+          "description": "(optional) group that this member should belong to, group name must be added first with add_group txn",
+          "type": "integer"
+        }
+
+      }
+             
     },
     "acl_payload": {
       "type": "object",
@@ -139,5 +369,8 @@
         "Key"
       ]
     }
+
+
+
   }
 }
