@@ -1,0 +1,18 @@
+{
+  "family_name": "private_intkey",
+  "family_version": 1.0,
+  "payload_encoding": "json",
+  "signer_priv_key": "admin_keys/client_private_key.hexstr",
+  "txn_payload":[
+
+	{"Action": "add_bunny", "UID": "bb563a4d49384b794f7a35656453656347354f6b4558666b6f704752793832", "Bunny":"12345", "Generation": 1, "IsNew": false, "State": "idle"},
+	{"Action": "add_bunny", "UID": "bb563a4d49384b794f7a35656453656347354f6b4558666b6f704752793832", "Bunny":"12325", "Generation": 1, "IsNew": false, "State": "idle"},
+	{"Action": "add_bunny", "UID": "bb563a4d49384b794f7a35656453656347354f6b4558666b6f704752793832", "Bunny":"54321", "Generation": 1, "IsNew": false, "State": "idle"},
+	{"Action": "add_bunny", "UID": "bb563a4d49384b794f7a35656453656347354f6b4558666b6f704752793832", "Bunny":"11111", "Generation": 1, "IsNew": false, "State": "idle"},
+	{"Action": "add_bunny", "UID": "bb563a4d49384b794f7a35656453656347354f6b4558666b6f704752793832", "Bunny":"55555", "Generation": 1, "IsNew": false, "State": "idle"},
+	{"Action": "change_bunny_state", "UID": "bb563a4d49384b794f7a35656453656347354f6b4558666b6f704752793832", "Bunny":"12325", "State": "inLove"}
+	
+
+  ]
+}
+

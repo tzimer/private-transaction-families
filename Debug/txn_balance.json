@@ -1,0 +1,14 @@
+{
+  "family_name": "private_intkey",
+  "family_version": 1.0,
+  "payload_encoding": "json",
+  "signer_priv_key": "admin_keys/client_private_key.hexstr",
+  "txn_payload":[
+    {"Action": "set_balance","UID": "bb563a4d49384b794f7a35656453656347354f6b4558666b6f704752793832", "Money":1127137, "Carrots":50 },
+	{"Action": "change_balance","UID": "bb563a4d49384b794f7a35656453656347354f6b4558666b6f704752793832", "Money":4},
+	{"Action": "change_balance","UID": "bb563a4d49384b794f7a35656453656347354f6b4558666b6f704752793832", "Money":-10},
+	{"Action": "change_balance","UID": "bb563a4d49384b794f7a35656453656347354f6b4558666b6f704752793832", "Carrots":5},
+	{"Action": "change_balance","UID": "bb563a4d49384b794f7a35656453656347354f6b4558666b6f704752793832", "Money": -1, "Carrots":5}
+  ]
+}
+

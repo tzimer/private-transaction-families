@@ -1,0 +1,11 @@
+{
+  "family_name": "private_intkey",
+  "family_version": 1.0,
+  "payload_encoding": "json",
+  "signer_priv_key": "admin_keys/client_private_key.hexstr",
+  "txn_payload":[
+
+	{"Action": "remove_couple", "UID": "bb563a4d49384b794f7a35656453656347354f6b4558666b6f704752793832", "Bunny":"11111"}
+  ]
+}
+

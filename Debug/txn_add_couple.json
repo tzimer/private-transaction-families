@@ -1,0 +1,13 @@
+{
+  "family_name": "private_intkey",
+  "family_version": 1.0,
+  "payload_encoding": "json",
+  "signer_priv_key": "admin_keys/client_private_key.hexstr",
+  "txn_payload":[
+
+	{"Action": "add_couple", "UID": "bb563a4d49384b794f7a35656453656347354f6b4558666b6f704752793832", "Bunny":"12345", "SonGeneration": 2, "InLoveWith": "54321", "LoveTime": 6, "TimeStr": "915", "Timestamp": 1550994332640},
+	{"Action": "add_couple", "UID": "bb563a4d49384b794f7a35656453656347354f6b4558666b6f704752793832", "Bunny":"11111", "SonGeneration": 2, "InLoveWith": "55555", "LoveTime": 6, "TimeStr": "915", "Timestamp": 1550994332640}
+
+  ]
+}
+
